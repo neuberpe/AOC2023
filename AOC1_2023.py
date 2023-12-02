@@ -1,6 +1,4 @@
 #Erste und Letzte Zahl finden, daraus 2.stellige Zahl bilden, Summe dieser ist Ergebnis
-import time
-start_time = time.time()
 
 with open("AOC1.txt", "r") as file:
     data = file.read().replace("\n", ",")
@@ -25,7 +23,7 @@ for k in mylist:
 	for i in k:
 		if i in num:
 			value.append(int(i))
-		elif len(k[pos:]) >= 2:
+		elif len(k[pos:]) >= 3:
 			for m in words:
 				if m in k[pos:pos+len(m)]:
 					value.append(words.index(m)+1)
@@ -35,4 +33,3 @@ for k in mylist:
 	res.append(value[0]*10+value[-1])
 
 print("Ergebnis Teil 2: "+str(sum(res)))
-print("--- %s seconds ---" % (time.time() - start_time))
