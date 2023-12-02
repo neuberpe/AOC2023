@@ -2,7 +2,7 @@
 
 with open("AOC2.txt", "r") as file:
     data = file.read().replace("\n", "|")
-mylist = data.split("|") #transormieren des obigen strings in liste, gesplittet nach ","
+mylist = data.split("|") #transformieren des obigen strings in liste, gesplittet nach "|"
 
 color =["red", "green","blue"]
 limit =[12,13,14]
