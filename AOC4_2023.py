@@ -12,7 +12,7 @@ res=[]
 res1=[]
 tickets = [1]*len(mylist)
 for a,i in enumerate(numbers):			#check for wins, log wins per ticket, multiply by amount of tickets
-	for k in range(10):
+	for k in range(10):			#change range to 5 and i[11] to i[6] for testbatch
 		if i[k+1] in i[11:]:			#+1 beacause ticket number is also in number[i]
 			res1.append(i[k+1])
 	for l in range(len(res1)):
