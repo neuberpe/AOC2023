@@ -1,4 +1,4 @@
-
+#find out tickets with wins, add the wins by 2**n, find # of tickets if tickets wins multiply
 import re
 
 with open("AOC4.txt") as file:
