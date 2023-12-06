@@ -5,39 +5,23 @@ with open("AOC6.txt") as file:
 time = [int(i) for i in mylist[0].split() if i.isdigit()]
 distance = [int(i) for i in mylist[1].split() if i.isdigit()]
 
-boat = [] # distances per round
-split = []
 res = 1
 reach = 0
 
-for i in range(len(time)):
+for i in range(len(time)):				#check if distance in time for each presstime
 	for j in range(time[i]):
-		split.append((time[i]-j)*j)
-	boat.append(split)
-	split=[]
-
-for i,k in enumerate(boat):		#find # of possibilites to achieve min distance
-	for a in k:
-		if a > distance[i]:
+		if (time[i]-j)*j > distance[i]:
 			reach +=1
-	res = res*reach
+	res = res*reach						#multiplay sum of possible solutions
 	reach=0
-
 print("Teil 1: "+str(res))
 
-newtime=""
-for e in time:
-	newtime += str(e)
-newtime= int(newtime)
+t = [str(i) for i in time]				#transform list of numbers into single number
+newtime= int("".join(t))
+s = [str(i) for i in distance]
+newdistance=int("".join(s))
 
-newdistance=""
-for e in distance:
-	newdistance += str(e)
-newdistance = int(newdistance)	#only one time and one distance
-
-for j in range(newtime):		#bruteforce
-	split.append((newtime-j)*j)
-for k in split:
-	if k > newdistance:
+for j in range(newtime):				#same as above
+	if (newtime-j)*j > newdistance:
 		reach +=1
 print("Teil 2: "+str(reach))	
